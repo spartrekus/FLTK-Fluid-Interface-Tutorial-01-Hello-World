@@ -1,0 +1,55 @@
+// !include{unimark.mrk}
+!tex
+\newcommand{\unitexline}[1]{- #1\\}
+
+
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{grffile}
+
+
+\newcommand{\unifig}[2]{
+\begin{center}
+\includegraphics[width=1.0\textwidth,keepaspectratio]{#1}\\
+\end{center}
+}
+
+
+
+!begin
+
+{\Large FLUID tutorial - Step \#1}
+
+!section Introduction
+Fluid is a graphics editor that is used to produce FLTK source code. 
+This tutorial will give you the first Simple Hello World program using Fluid on Linux. 
+
+
+!section Steps with Fluid
+| Go to File->New. Fill in the name of the file (ex:ui.fl)
+| New->Code->Class. In the name text box, fill in "SimpleUI"
+| Create the constructor for this class (New->Code->Function) "SimpleUI()"
+| Then you can create a window by going to New->Group->Window. 
+| To create the box, go to New->Other->Box. In Fl_Box window, fill in the attribute for this box. (Label = "Hello World!", Label Font = "Helvetica Bold", Label Type = "SHADOW_LABEL", Box = "UP_BOX, Size = "36").
+| To generate the .cxx file, go to File->WriteCode. This will generate a SimpleUI class which you can call from main function (similar to the FLTK tutorial).
+These above steps are based on a tutorial from the courses of\\ http://www.courses.cs.washington.edu.
+
+
+!fig{fluid01.png}
+
+!section Steps with GCC and Terminal 
+
+| You can then add main() and use the function SimpleUI().
+| You may compile with: g++ -L/usr/local/lib -lfltk -lXext -lX11 -lm  "test1.cxx"  -o fluid01
+
+!fig{fluid02.png}
+
+
+!section Conclusion
+Et Voila, the final result. 
+!fig{fluid03.png}
+
+
+!enddoc
+
